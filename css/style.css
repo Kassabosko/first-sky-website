@@ -213,8 +213,12 @@ img { max-width: 100%; display: block; }
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px 32px;
 }
 .logos-grid li {
-  font-family: var(--font-display); font-weight: 600; font-size: 15px;
-  color: var(--ink); opacity: 0.65; padding: 18px 0; border-bottom: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: flex-start;
+  height: 64px; padding: 12px 0; border-bottom: 1px solid var(--line);
+}
+.logos-grid img {
+  max-width: 100%; max-height: 100%; width: auto; height: auto;
+  object-fit: contain;
 }
 
 /* ==========================================================================
@@ -246,7 +250,7 @@ img { max-width: 100%; display: block; }
 .service-card.split { justify-content: flex-start; }
 .service-card h3 { color: #fff; margin-bottom: 12px; }
 .service-card p { color: #B7BBD1; margin: 0; font-size: 15px; }
-.service-icon { font-size: 20px; margin-bottom: 18px; display: inline-block; }
+.service-icon { margin-bottom: 18px; display: inline-flex; opacity: 0.9; }
 
 /* ==========================================================================
    STATS BAR
@@ -351,6 +355,10 @@ img { max-width: 100%; display: block; }
   .stats-grid { grid-template-columns: repeat(3, 1fr); }
   .projects-gallery { grid-template-columns: 1fr; }
   .contact-cards { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 560px) {
+  .logos-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 860px) {
